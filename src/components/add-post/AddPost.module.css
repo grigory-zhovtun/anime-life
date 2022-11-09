@@ -1,0 +1,8 @@
+.AddPost {
+    grid-area: add-post;
+
+    background: url('./../../img/add-post.jpg') center center no-repeat;
+    background-size: cover;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}

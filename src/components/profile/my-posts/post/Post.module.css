@@ -1,0 +1,10 @@
+.item {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.item img {
+  width: 50px;
+}

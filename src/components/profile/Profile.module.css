@@ -1,0 +1,5 @@
+.content {
+  grid-area: content;
+
+  background: linear-gradient(180deg, #DDDEEB 0%, rgba(250, 251, 253, 0) 100%);
+}
