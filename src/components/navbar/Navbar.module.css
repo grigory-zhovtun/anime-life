@@ -1,7 +1,7 @@
 .nav {
   grid-area: nav;
 
-  background: url('./../../img/navbar.jpg') center center no-repeat;
+  background: url("./../../img/navbar.jpg") center center no-repeat;
   background-size: cover;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -12,7 +12,6 @@
   margin: 15px 9px 0 12px;
 
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 
   font-style: normal;
   font-weight: 400;
@@ -38,7 +37,7 @@
   color: #000000;
 }
 
-.rightWrapper{
+.rightWrapper {
   display: grid;
   justify-items: end;
 }
@@ -47,14 +46,14 @@
   font-size: 12px;
   text-align: center;
   letter-spacing: 0.3em;
-  color: #009F06;
+  color: #009f06;
 }
 .status {
   font-weight: 400;
   font-size: 12px;
   text-align: center;
   letter-spacing: 0.3em;
-  color: #009F06;
+  color: #009f06;
   margin-top: 4px;
 }
 .city {
@@ -63,4 +62,35 @@
   letter-spacing: 0.3em;
   color: #000000;
   margin-top: 3px;
+}
+
+.menu {
+  margin: 51px 0 0 0;
+  text-align: center;
+}
+
+.item {
+  margin-bottom: 7px;
+}
+
+.item a.active {
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #ff003d;
+  order: 1;
+}
+
+.item a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #ff003d;
+  order: 1;
 }

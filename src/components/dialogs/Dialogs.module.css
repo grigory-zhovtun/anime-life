@@ -1,0 +1,43 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr;
+}
+
+.dialogsItems {
+  margin-top: 52px;
+  border-right: 8px solid #9ec0f0;
+  font-family: "Otaku Rant";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.dialogsItems .active {
+  color: gold;
+}
+
+.messages {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 52px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.message {
+  margin: 0 82px 10px 82px;
+
+  padding: 5px 10px;
+
+  background: rgba(183, 250, 226, 0.5);
+  border-radius: 7px;
+}
