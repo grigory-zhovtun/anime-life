@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { AddPost } from "../add-post/AddPost";
+import { AddPost } from "../profile/add-post/AddPost";
 import { Avatar } from "../avatar/Avatar";
 import { Dialogs } from "../dialogs/Dialogs";
 import { Header } from "../header/Header";
