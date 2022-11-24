@@ -4,12 +4,24 @@ import { App } from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import "./index.css";
 
+export type postsData = {
+        id: number,
+        text: string,
+        likesCount: number
+}
+
+const postsData: postsData[] = [
+    {id: 1, text: "Hello, I'm happy!", likesCount: 12},
+    {id: 2, text: "I wish to see you", likesCount: 45},
+    {id: 2, text: "I wish to see you", likesCount: 45}
+]
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App posts={postsData}/>
   </React.StrictMode>
 );
 

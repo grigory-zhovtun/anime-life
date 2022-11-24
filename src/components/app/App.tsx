@@ -11,7 +11,13 @@ import { Profile } from "../profile/Profile";
 import { Settings } from "../settings/Settings";
 import "./App.css";
 
-export const App = () => {
+import {postsData} from "../../index";
+
+type PropsType = {
+  posts: postsData[]
+}
+
+export const App = (props: PropsType) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -21,7 +27,7 @@ export const App = () => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile posts={props.posts}/>} />
             <Route path="/dialogs/*" element={<Dialogs />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
