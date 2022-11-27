@@ -3,10 +3,10 @@ import s from "./MyPosts.module.css";
 import ava from "./../../../img/ava.png";
 import {Post} from "./post/Post";
 
-import {postsData} from "../../../index";
+import {PostsDataType} from "../../../index";
 
 type PropsType = {
-    posts: postsData[]
+    posts: PostsDataType[]
 }
 
 export const MyPosts = (props: PropsType) => {

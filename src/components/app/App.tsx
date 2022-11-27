@@ -11,10 +11,10 @@ import { Profile } from "../profile/Profile";
 import { Settings } from "../settings/Settings";
 import "./App.css";
 
-import {postsData} from "../../index";
+import {PostsDataType} from "../../index";
 
 type PropsType = {
-  posts: postsData[]
+  posts: PostsDataType[]
 }
 
 export const App = (props: PropsType) => {

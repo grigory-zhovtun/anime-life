@@ -4,13 +4,17 @@ import { App } from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import "./index.css";
 
-export type postsData = {
+export type PostsDataType = {
         id: number,
         text: string,
         likesCount: number
 }
 
-const postsData: postsData[] = [
+export type MessagesDataType = {
+
+}
+
+const postsData: PostsDataType[] = [
     {id: 1, text: "Hello, I'm happy!", likesCount: 12},
     {id: 2, text: "I wish to see you", likesCount: 45},
     {id: 2, text: "I wish to see you", likesCount: 45}
