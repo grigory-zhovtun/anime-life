@@ -11,15 +11,13 @@ import { Profile } from "../profile/Profile";
 import { Settings } from "../settings/Settings";
 import "./App.css";
 
-import {PostsDataType, DialogsDataType, MessagesDataType} from "../../index";
+import {StateType} from "../../redux/state";
 
 type PropsType = {
-  posts: PostsDataType[],
-  dialogs: DialogsDataType[],
-  messages: MessagesDataType[]
+  state: StateType
 }
 
-export const App = (props: PropsType) => {
+export const App = ({state}: PropsType) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -29,8 +27,8 @@ export const App = (props: PropsType) => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile posts={props.posts}/>} />
-            <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
+            <Route path="/profile" element={<Profile state={state.profilePage}/>} />
+            <Route path="/dialogs/*" element={<Dialogs state={state.dialogsPage}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

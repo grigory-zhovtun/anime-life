@@ -3,49 +3,14 @@ import ReactDOM from 'react-dom/client';
 import {App} from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import "./index.css";
-
-export type PostsDataType = {
-    id: number,
-    text: string,
-    likesCount: number
-}
-
-export type MessagesDataType = {
-    id: number,
-    text: string
-}
-
-export type DialogsDataType = {
-    id: number,
-    name: string
-}
-
-const dialogsData: DialogsDataType[] = [
-    {id: 1, name: "Linda"},
-    {id: 2, name: "kitty"},
-    {id: 3, name: "rihanna"},
-]
-
-const messagesData: MessagesDataType[] = [
-    {id: 1, text: "Hello"},
-    {id: 2, text: "Lorem ipsum dolor sit amet consectetur. Sed pellentesque nec nascetur pretium elit quis integer. Morbi est morbi risus dictumst in est. Id dignissim molestie porttitor amet ultrices vitae feugiat."},
-    {id: 3, text: "Love"},
-]
-
-const postsData: PostsDataType[] = [
-    {id: 1, text: "Hello, I'm happy!", likesCount: 12},
-    {id: 2, text: "I wish to see you", likesCount: 45},
-    {id: 2, text: "I wish to see you", likesCount: 45}
-]
+import {state} from "./redux/state";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <App posts={postsData}
-             dialogs={dialogsData}
-             messages={messagesData}
+        <App state={state}
         />
     </React.StrictMode>
 );
