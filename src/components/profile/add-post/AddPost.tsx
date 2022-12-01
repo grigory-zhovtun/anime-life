@@ -2,10 +2,19 @@ import React from "react";
 import s from "./AddPost.module.css";
 
 export const AddPost = () => {
-  return (
-    <div className={s.AddPost}>
-      <textarea name="" id=""></textarea>
-      <button>Send</button>
-    </div>
-  );
+
+    const newPostElement = React.createRef<HTMLTextAreaElement>()
+    const addPost = () => {
+        if (newPostElement.current) {
+            alert(newPostElement.current.value)
+        }
+
+    }
+
+    return (
+        <div className={s.AddPost}>
+            <textarea ref={newPostElement} name="" id=""></textarea>
+            <button onClick={ addPost }>Send</button>
+        </div>
+    );
 };
