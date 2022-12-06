@@ -1,12 +1,16 @@
 import React from "react";
 import s from "./AddPost.module.css";
 
-export const AddPost = () => {
+type PropsType = {
+    addPost: (postMessage: string)=> void
+}
+export const AddPost = (props: PropsType) => {
 
     const newPostElement = React.createRef<HTMLTextAreaElement>()
     const addPost = () => {
         if (newPostElement.current) {
-            alert(newPostElement.current.value)
+            const text = newPostElement.current.value
+            props.addPost(text)
         }
 
     }
@@ -14,7 +18,8 @@ export const AddPost = () => {
     return (
         <div className={s.AddPost}>
             <textarea ref={newPostElement} name="" id=""></textarea>
-            <button onClick={ addPost }>Send</button>
+            <button
+                onClick={ addPost }>Send</button>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import {App} from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import "./index.css";
 import {state} from "./redux/state";
+import {addPost} from "./redux/state";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <App state={state}
+             addPost={addPost}
         />
     </React.StrictMode>
 );

@@ -9,25 +9,27 @@ import { Navbar } from "../navbar/Navbar";
 import { News } from "../news/News";
 import { Profile } from "../profile/Profile";
 import { Settings } from "../settings/Settings";
+
 import "./App.css";
 
 import {StateType} from "../../redux/state";
 
 type PropsType = {
   state: StateType
+  addPost: (postMessage: string)=> void
 }
 
-export const App = ({state}: PropsType) => {
+export const App = ({state, addPost}: PropsType) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Avatar />
-        <AddPost />
+        <AddPost addPost={addPost}/>
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={state.profilePage}/>} />
+            <Route path="/profile" element={<Profile state={state.profilePage} addPost={addPost}/>} />
             <Route path="/dialogs/*" element={<Dialogs state={state.dialogsPage}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
