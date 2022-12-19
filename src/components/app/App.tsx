@@ -12,24 +12,27 @@ import { Settings } from "../settings/Settings";
 
 import "./App.css";
 
-import {StateType} from "../../redux/state";
+import {StoreType} from "../../redux/state";
 
 type PropsType = {
-  state: StateType
-  addPost: (postMessage: string)=> void
+  store: StoreType
 }
 
-export const App = ({state, addPost}: PropsType) => {
+export const App = ({store}: PropsType) => {
+  const state = store.getState()
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Avatar />
-        <AddPost addPost={addPost}/>
+        <AddPost addPost={store.addPost.bind(store)}
+                 newPostText={state.profilePage.newPostText}
+                 updateNewPostText={store.updateNewPostText.bind(store)}/>
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={state.profilePage} addPost={addPost}/>} />
+            <Route path="/profile" element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>} />
             <Route path="/dialogs/*" element={<Dialogs state={state.dialogsPage}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
