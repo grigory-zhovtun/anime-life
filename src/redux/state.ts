@@ -43,8 +43,22 @@ export type StoreType = {
     updateNewPostText: (newText: string) => void,
     subscribe: (callback: ()=>void) => void,
     _onChange: () => void,
-    getState: () => StateType
+    getState: () => StateType,
+    dispatch: (action: ActionTypes) => void
 }
+
+type AddPostActionType = {
+    type: "ADD-POST"
+    postText: string
+}
+type UpdateNewPostTextActionType = {
+    type: "UPDATE-NEW-TEXT"
+    newText: string
+}
+
+export type ActionTypes = AddPostActionType | UpdateNewPostTextActionType
+export const addPostAC = (postText: string): AddPostActionType => ({type: "ADD-POST", postText: postText})
+export const updateNewPostTextAC = (postText: string):UpdateNewPostTextActionType => ({type: "UPDATE-NEW-TEXT", newText: postText})
 
 export const store: StoreType = {
     _state: {
@@ -56,6 +70,9 @@ export const store: StoreType = {
             dialogs: dialogsData,
             messages: messagesData
         }
+    },
+    _onChange(){
+        console.log("State changed")
     },
     addPost(postMessage: string) {
         const newPost: PostsDataType = {
@@ -73,10 +90,22 @@ export const store: StoreType = {
     subscribe(observer){
         this._onChange = observer;
     },
-    _onChange(){
-        console.log("State changed")
-    },
     getState() {
         return this._state
+    },
+
+    dispatch(action) {
+        if(action.type === "ADD-POST") {
+            const newPost: PostsDataType = {
+                id: 5,
+                text: action.postText,
+                likesCount: 0
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._onChange();
+        } else if (action.type === "UPDATE-NEW-TEXT") {
+            this._state.profilePage.newPostText = action.newText;
+            this._onChange();
+        }
     }
 }
