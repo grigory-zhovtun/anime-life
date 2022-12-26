@@ -35,7 +35,7 @@ export const App = ({store}: PropsType) => {
                         <Route path="/profile"
                                element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>}/>
                         {/*<Route path="/profile" element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>} />*/}
-                        <Route path="/dialogs/*" element={<Dialogs state={state.dialogsPage}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
