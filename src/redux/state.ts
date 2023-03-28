@@ -1,3 +1,6 @@
+import profileReducer, {addPostAC, updateNewPostTextAC} from "./profile-reducer";
+import dialogsReducer, {sendMessageAC, updateNewMessageBodyAC} from "./dialogs-reducer";
+
 export type PostsDataType = {
     id: number,
     text: string,
@@ -22,11 +25,6 @@ export type StateType = {
         newMessageBody: string
     }
 }
-
-const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
-const SEND_MESSAGE = "SEND_MESSAGE"
 
 const dialogsData: DialogsDataType[] = [
     {id: 1, name: "Linda"},
@@ -58,12 +56,10 @@ export type ActionTypes =   ReturnType<typeof addPostAC> |
                             ReturnType<typeof updateNewPostTextAC> |
                             ReturnType<typeof updateNewMessageBodyAC> |
                             ReturnType<typeof sendMessageAC>
-export const addPostAC = (postText: string) => ({type: "ADD-POST", postText: postText} as const)
-export const updateNewPostTextAC = (postText: string) => ({type: "UPDATE-NEW-POST-TEXT", newText: postText} as const)
-export const sendMessageAC = () => ({type: SEND_MESSAGE,} as const)
-export const updateNewMessageBodyAC = (text: string) => ({type: UPDATE_NEW_MESSAGE_BODY, body: text} as const)
+
 
 export const store: StoreType = {
+
     _state: {
         profilePage: {
             posts: postsData,
@@ -99,25 +95,10 @@ export const store: StoreType = {
     },
 
     dispatch(action) {
-        if(action.type === ADD_POST) {
-            const newPost: PostsDataType = {
-                id: 5,
-                text: action.postText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._onChange();
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._onChange();
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this._onChange();
-        }else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = '';
-            this._state.dialogsPage.messages.push({id: 4, text: body});
-            this._onChange();
-        }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._onChange();
+
     }
 }

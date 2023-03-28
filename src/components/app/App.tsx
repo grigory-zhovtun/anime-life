@@ -34,7 +34,6 @@ export const App = ({store}: PropsType) => {
                     <Routes>
                         <Route path="/profile"
                                element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>}/>
-                        {/*<Route path="/profile" element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>} />*/}
                         <Route path="/dialogs/*" element={<Dialogs store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
