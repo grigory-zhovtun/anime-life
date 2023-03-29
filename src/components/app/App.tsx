@@ -15,7 +15,7 @@ import "./App.css";
 import {StoreType} from "../../redux/store";
 
 type PropsType = {
-    store: StoreType
+    store: any
 }
 
 export const App = ({store}: PropsType) => {
@@ -33,7 +33,7 @@ export const App = ({store}: PropsType) => {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/profile"
-                               element={<Profile state={state.profilePage} addPost={store.addPost.bind(store)}/>}/>
+                               element={<Profile state={state.profilePage} addPost={store.dispatch.bind(store)}/>}/>
                         <Route path="/dialogs/*" element={<Dialogs store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
