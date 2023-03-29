@@ -3,7 +3,7 @@ import s from "./MyPosts.module.css";
 import ava from "./../../../img/ava.png";
 import {Post} from "./post/Post";
 
-import {PostsDataType} from "../../../redux/state";
+import {PostsDataType} from "../../../redux/store";
 
 type PropsType = {
     posts: PostsDataType[]

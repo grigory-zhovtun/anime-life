@@ -12,7 +12,7 @@ import {Settings} from "../settings/Settings";
 
 import "./App.css";
 
-import {StoreType} from "../../redux/state";
+import {StoreType} from "../../redux/store";
 
 type PropsType = {
     store: StoreType
