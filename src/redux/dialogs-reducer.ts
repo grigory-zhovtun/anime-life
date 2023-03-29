@@ -1,9 +1,25 @@
-import {PostsDataType} from "./store";
+import {DialogsDataType, MessagesDataType, PostsDataType} from "./store";
 
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
 const SEND_MESSAGE = "SEND_MESSAGE"
 
-const dialogsReducer = (state: any, action: any) => {
+const dialogsData: DialogsDataType[] = [
+    {id: 1, name: "Linda"},
+    {id: 2, name: "kitty"},
+    {id: 3, name: "rihanna"},
+]
+const messagesData: MessagesDataType[] = [
+    {id: 1, text: "Hello"},
+    {id: 2, text: "Lorem ipsum dolor sit amet consectetur. Sed pellentesque nec nascetur pretium elit quis integer. Morbi est morbi risus dictumst in est. Id dignissim molestie porttitor amet ultrices vitae feugiat."},
+    {id: 3, text: "Love"},
+]
+const initialState = {
+    dialogs: dialogsData,
+    messages: messagesData,
+    newMessageBody: ""
+}
+
+const dialogsReducer = (state: any = initialState, action: any) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
             state.newMessageBody = action.body;
