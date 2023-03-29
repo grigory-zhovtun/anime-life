@@ -3,7 +3,17 @@ import {PostsDataType} from "./store";
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 
-const profileReducer = (state: any, action: any) => {
+const postsData: PostsDataType[] = [
+    {id: 1, text: "Hello, I'm happy!", likesCount: 12},
+    {id: 2, text: "I wish to see you", likesCount: 45},
+    {id: 2, text: "I wish to see you", likesCount: 45}
+]
+const initialState = {
+        posts: postsData,
+        newPostText: "Grigory says Hello!"
+}
+
+const profileReducer = (state: any = initialState, action: any) => {
     switch (action.type) {
         case ADD_POST:
             const newPost: PostsDataType = {
