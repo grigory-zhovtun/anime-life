@@ -1,0 +1,26 @@
+.wrapper {
+  display: grid;
+  width: 144rem;
+  margin: 0 auto;
+
+  grid-template-areas:
+    "header header"
+    "avatar add-post"
+    "nav content";
+
+  grid-template-columns: 25rem 1fr;
+  grid-template-rows: 7rem 25rem min-content;
+
+  gap: .5rem;
+  /* grid-gap: 10px; */
+
+  &__content {
+    grid-area: content;
+    
+  
+    background: url("./../../img/bg-posts.jpg") center / cover no-repeat;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.7rem;
+  }
+  
+}

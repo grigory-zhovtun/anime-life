@@ -5,13 +5,13 @@
 }
 
 .dialogsItems {
-  margin-top: 52px;
-  border-right: 8px solid #9ec0f0;
+  margin-top: 5.2rem;
+  border-right: 0.8rem solid #9ec0f0;
   font-family: "Otaku Rant";
   font-style: italic;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 2rem;
+  line-height: 2.3rem;
   text-align: center;
 
   color: #000000;
@@ -24,11 +24,11 @@
 .messages {
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 52px;
+  margin-top: 5.2rem;
   font-family: "Montserrat";
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1.6rem;
+  line-height: 2rem;
   text-align: center;
   color: #000000;
 }

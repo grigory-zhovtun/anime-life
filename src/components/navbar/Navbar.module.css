@@ -3,36 +3,36 @@
 
   background: url("./../../img/navbar.jpg") center center no-repeat;
   background-size: cover;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
 .person {
   display: grid;
 
-  margin: 15px 9px 0 12px;
+  margin: 1.5rem 0.9rem 0 1.2rem;
 
   grid-template-columns: 1fr 1fr;
 
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .name {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: 0.3em;
   color: #000000;
 }
 .surname {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: 0.3em;
   color: #000000;
 }
 .age {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   letter-spacing: 0.3em;
   color: #000000;
 }
@@ -43,42 +43,42 @@
 }
 .onlineStatus {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   text-align: center;
   letter-spacing: 0.3em;
   color: #009f06;
 }
 .status {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   text-align: center;
   letter-spacing: 0.3em;
   color: #009f06;
-  margin-top: 4px;
+  margin-top: 0.4rem;
 }
 .city {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 0.3em;
   color: #000000;
-  margin-top: 3px;
+  margin-top: 0.3rem;
 }
 
 .menu {
-  margin: 51px 0 0 0;
+  margin: 5.1rem 0 0 0;
   text-align: center;
 }
 
 .item {
-  margin-bottom: 7px;
+  margin-bottom: 0.7rem;
 }
 
 .item a.active {
   text-decoration: none;
   font-style: italic;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 2rem;
+  line-height: 2.3rem;
   text-align: center;
   color: #ff003d;
   order: 1;
@@ -88,8 +88,8 @@
   text-decoration: none;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 2rem;
+  line-height: 2.3rem;
   text-align: center;
   color: #ff003d;
   order: 1;

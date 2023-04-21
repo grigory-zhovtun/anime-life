@@ -10,7 +10,7 @@ import {News} from "../news/News";
 import {Profile} from "../profile/Profile";
 import {Settings} from "../settings/Settings";
 
-import "./App.css";
+import s from "./App.module.scss";
 
 import {StoreType} from "../../redux/store";
 
@@ -23,14 +23,14 @@ export const App = ({store}: PropsType) => {
 
     return (
         <BrowserRouter>
-            <div className="app-wrapper">
+            <div className={s.wrapper}>
                 <Header/>
                 <Avatar/>
                 <AddPost dispatch={store.dispatch.bind(store)}
                          newPostText={state.profilePage.newPostText}
                 />
                 <Navbar/>
-                <div className="app-wrapper-content">
+                <div  className={s.wrapper__content}>
                     <Routes>
                         <Route path="/profile"
                                element={<Profile state={state.profilePage} addPost={store.dispatch.bind(store)}/>}/>
