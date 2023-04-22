@@ -13,7 +13,7 @@ import {Settings} from "../settings/Settings";
 import s from "./App.module.scss";
 
 import {StoreType} from "../../redux/store";
-import { AddPostContainer } from "../profile/add-post/AddPost-container";
+import { AddPostContainer } from "../profile/add-post/AddPostContainer";
 
 type PropsType = {
     store: any
