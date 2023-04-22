@@ -1,5 +1,4 @@
 import React, {ChangeEvent} from "react";
-import s from "./AddPost.module.css";
 import {ActionTypes} from "../../../redux/store";
 import {addPostAC, updateNewPostTextAC} from "../../../redux/profile-reducer";
 import { AddPost } from "./AddPost";

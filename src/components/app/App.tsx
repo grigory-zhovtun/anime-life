@@ -1,8 +1,6 @@
 import React from "react";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
-import {AddPost} from "../profile/add-post/AddPost";
 import {Avatar} from "../avatar/Avatar";
-import {Dialogs} from "../dialogs/Dialogs";
 import {Header} from "../header/Header";
 import {Music} from "../music/Music";
 import {Navbar} from "../navbar/Navbar";
@@ -14,6 +12,7 @@ import s from "./App.module.scss";
 
 import {StoreType} from "../../redux/store";
 import { AddPostContainer } from "../profile/add-post/AddPostContainer";
+import { DialogsContainer } from "../dialogs/DialogsContainer";
 
 type PropsType = {
     store: any
@@ -35,7 +34,7 @@ export const App = ({store}: PropsType) => {
                     <Routes>
                         <Route path="/profile"
                                element={<Profile state={state.profilePage} addPost={store.dispatch.bind(store)}/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs store={store}/>}/>
+                        <Route path="/dialogs/*" element={<DialogsContainer store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
