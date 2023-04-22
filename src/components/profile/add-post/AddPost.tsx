@@ -4,18 +4,19 @@ import {ActionTypes} from "../../../redux/store";
 import {addPostAC, updateNewPostTextAC} from "../../../redux/profile-reducer";
 
 type PropsType = {
+    addPost: () => void
+    updateNewPostText: (text: string) => void
     newPostText: string
-    dispatch: (action: ActionTypes) => void
 }
 export const AddPost = (props: PropsType) => {
 
-    const addPost = () => {
-        props.dispatch(addPostAC(props.newPostText))
-        props.dispatch(updateNewPostTextAC(''))
+    const addPostHandler = () => {
+        props.addPost()
+        props.updateNewPostText('')
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.dispatch(updateNewPostTextAC(e.currentTarget.value))
+        props.updateNewPostText(e.currentTarget.value)
     }
 
     return (
@@ -24,7 +25,7 @@ export const AddPost = (props: PropsType) => {
                         value={props.newPostText}
                         onChange={onChangeHandler}/>
             <button
-                onClick={ addPost }>Send</button>
+                onClick={ addPostHandler }>Send</button>
         </div>
     );
 };

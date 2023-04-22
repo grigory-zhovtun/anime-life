@@ -13,6 +13,7 @@ import {Settings} from "../settings/Settings";
 import s from "./App.module.scss";
 
 import {StoreType} from "../../redux/store";
+import { AddPostContainer } from "../profile/add-post/AddPost-container";
 
 type PropsType = {
     store: any
@@ -26,7 +27,7 @@ export const App = ({store}: PropsType) => {
             <div className={s.wrapper}>
                 <Header/>
                 <Avatar/>
-                <AddPost dispatch={store.dispatch.bind(store)}
+                <AddPostContainer dispatch={store.dispatch.bind(store)}
                          newPostText={state.profilePage.newPostText}
                 />
                 <Navbar/>
