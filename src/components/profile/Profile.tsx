@@ -3,18 +3,17 @@ import { MyPosts } from "./my-posts/MyPosts";
 import s from "./Profile.module.css";
 
 import {PostsDataType} from "../../redux/store";
+import { MyPostsContainer } from "./my-posts/MyPostsContainer";
 
 type PropsType = {
-    state: {
-        posts: PostsDataType[]
-    },
-    addPost: (postMessage: string)=> void
+    posts: PostsDataType[]
+    // addPost: (postMessage: string)=> void
 }
 
 export const Profile = (props: PropsType) => {
   return (
     <div className={s.content}>
-      <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+      <MyPostsContainer/>
     </div>
   );
 };

@@ -13,6 +13,7 @@ import s from "./App.module.scss";
 import {StoreType} from "../../redux/store";
 import { AddPostContainer } from "../profile/add-post/AddPostContainer";
 import { DialogsContainer } from "../dialogs/DialogsContainer";
+import { ProfileContainer } from "../profile/ProfileContainer";
 
 type PropsType = {
     store: any
@@ -34,7 +35,7 @@ export const App = ({store}: PropsType) => {
                 <div  className={s.wrapper__content}>
                     <Routes>
                         <Route path="/profile"
-                               element={<Profile state={state.profilePage} addPost={store.dispatch.bind(store)}/>}/>
+                               element={<ProfileContainer/>}/>
                         <Route path="/dialogs/*" element={<DialogsContainer store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>

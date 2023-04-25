@@ -7,7 +7,7 @@ import {PostsDataType} from "../../../redux/store";
 
 type PropsType = {
     posts: PostsDataType[]
-    addPost: (postMessage: string)=> void
+    // addPost: (postMessage: string)=> void
 }
 
 export const MyPosts = (props: PropsType) => {
