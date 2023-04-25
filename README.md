@@ -1,5 +1,5 @@
 # Social Network - Anime Life
 
-This project is for studying React
+This project is for studying _React JS_
 
 

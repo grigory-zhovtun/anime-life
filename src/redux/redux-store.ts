@@ -6,7 +6,7 @@ const reducers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer
 })
-
+export type AppStateType= ReturnType<typeof reducers>
 const store = createStore(reducers)
 
 export default store;

@@ -26,9 +26,10 @@ export const App = ({store}: PropsType) => {
             <div className={s.wrapper}>
                 <Header/>
                 <Avatar/>
-                <AddPostContainer dispatch={store.dispatch.bind(store)}
-                         newPostText={state.profilePage.newPostText}
-                />
+                {/* <AddPostContainer dispatch={store.dispatch.bind(store)}
+                         newPostText={state.profilePage.newPostText} */}
+                <AddPostContainer />
+
                 <Navbar/>
                 <div  className={s.wrapper__content}>
                     <Routes>

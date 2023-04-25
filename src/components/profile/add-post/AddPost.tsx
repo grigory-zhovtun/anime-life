@@ -3,14 +3,14 @@ import s from "./AddPost.module.css";
 
 
 type PropsType = {
-    addPost: () => void
+    addPost: (newPostText: string) => void
     updateNewPostText: (text: string) => void
     newPostText: string
 }
 export const AddPost = (props: PropsType) => {
 
     const addPostHandler = () => {
-        props.addPost()
+        props.addPost(props.newPostText)
         props.updateNewPostText('')
     }
 
