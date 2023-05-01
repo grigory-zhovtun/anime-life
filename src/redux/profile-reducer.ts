@@ -10,27 +10,21 @@ const postsData: PostsDataType[] = [
 ]
 const initialState = {
         posts: postsData,
-        newPostText: "Grigory says Hello!"
+        newPostText: ""
 }
 
 const profileReducer = (state: any = initialState, action: any) => {
     switch (action.type) {
-        case ADD_POST: {
-            const newPost: PostsDataType = {
-                id: 5,
-                text: action.postText,
-                likesCount: 0
-            };
-            const stateCopy = {...state}
-            stateCopy.posts = [...state.posts]
-            stateCopy.posts.push(newPost);
-            return stateCopy;
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            const stateCopy = {...state}
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
-        }
+        case ADD_POST: 
+            return {
+                ...state,
+                posts: [...state.posts, {id: 5, text: action.postText, likesCount: 0}],
+            }
+        case UPDATE_NEW_POST_TEXT:
+            return {
+                ...state,
+                newPostText: action.newText
+            }
         default:
             return state;
     }
