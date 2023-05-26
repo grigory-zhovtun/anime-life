@@ -2,6 +2,7 @@ import {PostsDataType} from "./store";
 
 const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
+const SET_USERS = "SET_USERS"
 
 type LocationType = {
     country: string
@@ -37,6 +38,8 @@ const usersReducer = (state = initialState, action: any) => {
                 ...state,
                 users: state.users.map(user => user.id === action.userId ? {...user, followed: false} : {...user})
             }
+        case SET_USERS:
+            return {...state, users: [...state.users, ...action.users]}
         default:
             return state;
     }
@@ -44,5 +47,6 @@ const usersReducer = (state = initialState, action: any) => {
 
 export const followAC = (userId: number) => ({type: FOLLOW, userId})
 export const unFollowAC = (userId: number) => ({type: UNFOLLOW, userId})
+export const setUsersAC = (users: UserType[]) => ({type: SET_USERS, users})
 
 export default usersReducer;
