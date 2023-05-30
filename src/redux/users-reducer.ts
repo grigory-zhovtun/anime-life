@@ -9,8 +9,9 @@ type LocationType = {
     city: string
 }
 
-type UserType = {
+export type UserType = {
     id: number
+    photoUrl: string
     followed: boolean
     fullName: string
     status: string
@@ -18,9 +19,9 @@ type UserType = {
 }
 
 const users: UserType[] = [
-    {id: 1, followed: true, fullName: "Grigory", status: 'married', location: {country: 'Russia', city: 'Saint-Petersburg'}},
-    {id: 1, followed: false, fullName: "Sergey", status: 'married', location: {country: 'Russia', city: 'Moscow'}},
-    {id: 1, followed: true, fullName: "James", status: 'married', location: {country: 'USA', city: 'New York'}},
+    {id: 1, photoUrl: 'https://i.pinimg.com/550x/0c/17/ae/0c17ae80425d53c2dbd359864166e5f9.jpg', followed: true, fullName: "Grigory", status: 'married', location: {country: 'Russia', city: 'Saint-Petersburg'}},
+    {id: 1, photoUrl: 'https://i.pinimg.com/550x/0c/17/ae/0c17ae80425d53c2dbd359864166e5f9.jpg',followed: false, fullName: "Sergey", status: 'married', location: {country: 'Russia', city: 'Moscow'}},
+    {id: 1, photoUrl: 'https://i.pinimg.com/550x/0c/17/ae/0c17ae80425d53c2dbd359864166e5f9.jpg',followed: true, fullName: "James", status: 'married', location: {country: 'USA', city: 'New York'}},
 ]
 const initialState = {
     users: users

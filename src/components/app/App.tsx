@@ -14,6 +14,7 @@ import {StoreType} from "../../redux/store";
 import { AddPostContainer } from "../profile/add-post/AddPostContainer";
 import { DialogsContainer } from "../dialogs/DialogsContainer";
 import { ProfileContainer } from "../profile/ProfileContainer";
+import UsersContainer from "../users/UsersContainer";
 
 type PropsType = {
     store: any
@@ -37,6 +38,7 @@ export const App = ({store}: PropsType) => {
                         <Route path="/profile"
                                element={<ProfileContainer/>}/>
                         <Route path="/dialogs/*" element={<DialogsContainer store={store}/>}/>
+                        <Route path="/users" element={<UsersContainer store={store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
