@@ -1,11 +1,25 @@
 import React from 'react';
 import { UserType } from '../../redux/users-reducer';
+import axios from 'axios';
 
 type UsersPropsType = {
     users: UserType[]
+    follow: (userID: number) => void
+    unfollow: (userID: number) => void
+    setUsers: (users: UserType[]) => void
 }
 
 const Users = (props: UsersPropsType) => {
+
+    if(props.users.length === 0) {
+
+        axios
+            .get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.setUsers(response.data.items)
+            })
+    }
+ 
     return (
         <div>
             {props.users.map(user => {
@@ -13,20 +27,15 @@ const Users = (props: UsersPropsType) => {
                     <div key={user.id}>
                         <span>
                             <div>
-                                <img src={user.photoUrl} alt="ava"/>
-                            </div>
-                            <div>
-                                {user.followed ? <button>Unfollowed</button> : <button>Followed</button>}
+                                {user.followed ? 
+                                <button onClick={() => props.unfollow(user.id)}>Unfollowed</button> : 
+                                <button onClick={() => props.follow(user.id)}>Followed</button>}
                             </div>
                         </span>
                         <span>
                             <span>
-                                <div>{user.fullName}</div>
+                                <div>{user.name}</div>
                                 <div>{user.status}</div>
-                            </span>
-                            <span>
-                                <div>{user.location.country}</div>
-                                <div>{user.location.city}</div>
                             </span>
                         </span>
                     </div>
