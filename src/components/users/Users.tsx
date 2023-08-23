@@ -31,9 +31,7 @@ const Users = (props: UsersPropsType) => {
             <span>3</span>
             <span>4</span>
             <span>5</span>
-            {props.users.map(user => {
-                return (
-                    <div key={user.id}>
+            {props.users.map(user => <div key={user.id}>
                         <span>
                             <div>
                                 {user.followed ?
@@ -48,8 +46,8 @@ const Users = (props: UsersPropsType) => {
                             </span>
                         </span>
                     </div>
-                )
-            })}
+                
+            )}
         </div>
     );
 };
