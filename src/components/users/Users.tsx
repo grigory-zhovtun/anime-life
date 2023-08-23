@@ -11,15 +11,19 @@ type UsersPropsType = {
 
 const Users = (props: UsersPropsType) => {
 
-    if(props.users.length === 0) {
+    let getUsers = () => {
+        if (props.users.length === 0) {
 
-        axios
-            .get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items)
-            })
+            axios
+                .get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items)
+                })
+        }
     }
- 
+
+
+
     return (
         <div>
             <span>1</span>
@@ -32,9 +36,9 @@ const Users = (props: UsersPropsType) => {
                     <div key={user.id}>
                         <span>
                             <div>
-                                {user.followed ? 
-                                <button onClick={() => props.unfollow(user.id)}>Unfollowed</button> : 
-                                <button onClick={() => props.follow(user.id)}>Followed</button>}
+                                {user.followed ?
+                                    <button onClick={() => props.unfollow(user.id)}>Unfollowed</button> :
+                                    <button onClick={() => props.follow(user.id)}>Followed</button>}
                             </div>
                         </span>
                         <span>
