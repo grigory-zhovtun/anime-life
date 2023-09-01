@@ -1,3 +1,4 @@
+import { truncate } from "fs";
 import { PostsDataType } from "./store";
 
 const FOLLOW = "FOLLOW"
@@ -5,6 +6,8 @@ const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET_USERS"
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+
 
 type LocationType = {
     country: string
@@ -29,7 +32,8 @@ const initialState = {
     users: users,
     pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false,
 }
 
 const usersReducer = (state = initialState, action: any) => {
@@ -47,9 +51,11 @@ const usersReducer = (state = initialState, action: any) => {
         case SET_USERS:
             return { ...state, users: action.users }
         case SET_CURRENT_PAGE:
-            return { ...state, currentPage: action.currentPage}
+            return { ...state, currentPage: action.currentPage }
         case SET_USERS_TOTAL_COUNT:
-            return { ...state, totalUsersCount: action.totalCount}
+            return { ...state, totalUsersCount: action.totalCount }
+        case TOGGLE_IS_FETCHING:
+            return { ...state, isFetching: action.isFetching }
         default:
             return state;
     }
@@ -60,5 +66,6 @@ export const unFollowAC = (userId: number) => ({ type: UNFOLLOW, userId })
 export const setUsersAC = (users: UserType[]) => ({ type: SET_USERS, users })
 export const setCurrentPageAC = (currentPage: number) => ({ type: SET_CURRENT_PAGE, currentPage })
 export const setUsersTotalCountAC = (totalCount: number) => ({ type: SET_USERS_TOTAL_COUNT, totalCount })
+export const toggleIsFetchingAC = (isFetching: boolean) => ({ type: TOGGLE_IS_FETCHING, isFetching})
 
 export default usersReducer;
